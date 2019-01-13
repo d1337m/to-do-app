@@ -3,7 +3,7 @@
         <div class="content">
             <div  class="m-b-md">
                 <h2 class="title m-b-md">
-                    Treclon
+                    Bifrost
                 </h2>
                 <h3>
                     Your efficent task planner

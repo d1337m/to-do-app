@@ -59,6 +59,7 @@
                       .then(response => {
                         console.log(response)
                         localStorage.setItem('user',response.data.success.name)
+                        localStorage.setItem('id',response.data.success.id)
                         localStorage.setItem('jwt',response.data.success.token)
 
                         if (localStorage.getItem('jwt') != null){

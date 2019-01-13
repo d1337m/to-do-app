@@ -15113,7 +15113,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             categories: [],
-            task: {},
             editingTask: null,
             isModalVisible: false,
             taskId: null,
@@ -15160,7 +15159,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addNew: function addNew(id) {
             var _this2 = this;
 
-            var user_id = 1;
+            var user_id = localStorage.getItem('id');
             var name = "New task";
             var category_id = this.categories[id].id;
             var order = this.categories[id].tasks.length;
@@ -18081,6 +18080,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).then(function (response) {
                     console.log(response);
                     localStorage.setItem('user', response.data.success.name);
+                    localStorage.setItem('id', response.data.success.id);
                     localStorage.setItem('jwt', response.data.success.token);
 
                     if (localStorage.getItem('jwt') != null) {
@@ -18719,7 +18719,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "content" }, [
         _c("div", { staticClass: "m-b-md" }, [
           _c("h2", { staticClass: "title m-b-md" }, [
-            _vm._v("\n                Treclon\n            ")
+            _vm._v("\n                Bifrost\n            ")
           ]),
           _vm._v(" "),
           _c("h3", [
