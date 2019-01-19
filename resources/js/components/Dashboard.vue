@@ -10,11 +10,17 @@
                         <div class="card-body card-body-dark">
                             <draggable :options="dragOptions" element="div" @end="changeOrder" v-model="element.tasks">
                                 <transition-group :id="element.id">
-                                    <div v-for="task,index in element.tasks" :key="task.id+','+task.category_id+','+task.order" class="transit-1" :id="task.id">
+                                    <div v-for="task,index in element.tasks" 
+                                        :key="task.id+','+task.category_id+','+task.order" 
+                                        class="transit-1" :id="task.id">
                                         <div class="small-card" @dblclick="enableModal(task.id)">
-                                            <textarea id="text-area" v-if="task === editingTask" class="text-input" @keyup.esc="endEditing(task)" @blur="endEditing(task)" v-model="task.name"></textarea>
-                                            <label for="checkbox" v-if="task !== editingTask" @click="editTask(task)" >{{ task.name }}</label>
-                                            <span class="badge badge-danger" v-if="task !== editingTask" @click="deleteTask(task.id)">X</span>
+                                            <textarea id="text-area" v-if="task === editingTask" 
+                                                class="text-input" @keyup.esc="endEditing(task)"
+                                                @blur="endEditing(task)" v-model="task.name"></textarea>
+                                            <label for="checkbox" v-if="task !== editingTask"
+                                                @click="editTask(task)" >{{ task.name }}</label>
+                                            <span class="badge badge-danger" v-if="task !== editingTask"
+                                                @click="deleteTask(task.id)">X</span>
                                         </div>
                                     </div>
                                     <div class="small-card" :key="'addNew'">
